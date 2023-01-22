@@ -1,0 +1,8 @@
+.homePageContainer{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.homePageList {
+
+}
