@@ -5,22 +5,17 @@ const headerItems = [
   { to: '/', title: 'Home' },
   {
     to: '/movies',
-    title: 'Movies(with open search)',
+    title: 'Movies',
     state: { isSearchOpen: true },
   },
-  {
-    to: '/movies',
-    title: 'Movies (without open search)',
-    state: { isSearchOpen: false },
-  },
-];
+  ];
 
 const Header = () => {
   return (
     <nav className={style.nav}>
-      <ul>
+      <ul className={style.navList}>
         {headerItems.map(({ title, to, state }) => (
-          <li key={title}>
+          <li key={title} className={style.navItem}>
             <NavLink
               className={({ isActive }) => (isActive ? style.nav_active : null)}
               to={to}

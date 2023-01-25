@@ -1,8 +1,0 @@
-.nav {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-}
-
-.nav_active{
-    background-color: gray;
-}
