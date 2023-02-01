@@ -1,11 +1,12 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const MOVIES_API_KEY = '067705c909e37a633e5abed845a3422c';
 
 export const getTrendingMovies = async () => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/trending/movie/day?api_key=${MOVIES_API_KEY}`
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${MOVIES_API_KEY}`
     );
     const responseData = response.data.results;
     return responseData;
@@ -22,7 +23,7 @@ export const searchMoviesByQuery = async query => {
     const responseData = response.data.results;
     return responseData;
   } catch (error) {
-    console.log(error);
+     toast.error(error.message);
   }
 };
 

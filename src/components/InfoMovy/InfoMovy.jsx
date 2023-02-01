@@ -1,46 +1,37 @@
 import style from './InfoMovy.module.css';
 import PropTypes from 'prop-types';
 
-const InfoMovy = ({movy}) => {
-    //   const {
-    //     title,
-    //     vote_average,
-    //     overview,
-    //     genres,
-    //     poster_path,
-    //     release_date,
-    // } = movy;
+const InfoMovy = ({movie}) => {
+      const {
+        title,
+        vote_average,
+        overview,
+        genres,
+        poster_path,
+        release_date,
+    } = movie;
     
   return (
     <div className={style.detailsWrapper}>
-      <h1 className={style.detailsTitle}>
-        {`${movy.title} (${
-          movy.release_date && movy.release_date.slice(0, 4)
-        })`}
+      <h1>
+        {title} ({release_date?.split('-')[0]})
       </h1>
       <img
-        className={style.detailsImg}
-        src={
-          movy.poster_path &&
-          `https://image.tmdb.org/t/p/w500${movy.poster_path}`
-        }
-        alt={movy.title}
+        src={`https://image.tmdb.org/t/p/w780${poster_path}`}
+        alt={title}
+        width="300"
       />
-      <p className={style.detailsText}>
-        User Score: {Math.round((movy.vote_average / 10) * 100)}%
-      </p>
-      <h2 className={style.detailsName}>Overview</h2>
-      <p className={style.detailsText}>{movy.overview}</p>
-      <h2 className={style.detailsName}>Genres</h2>
-      <p className={style.detailsText}>
-        {movy.genres?.map(genre => genre.name).join(', ')}
-      </p>
+      <p>User score: {vote_average * 10}%</p>
+      <h2>Overview</h2>
+      <p>{overview}</p>
+      <h3>Genres</h3>
+      <p>{genres?.map(genre => genre.name).join(', ')}</p>
     </div>
   );
 };
 
 InfoMovy.propTypes = {
-  movy: PropTypes.arrayOf(
+  movie: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,

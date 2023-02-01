@@ -12,12 +12,12 @@ const Cast = () => {
       return;
     }
 
-    getMoviesCast(id).then(response => setCast(response.cast));
+    getMoviesCast(id).then(setCast);
   }, [id]);
 
   return (<div>
     <ul className={style.castList}>
-      {cast.slice(0, 10).map(({ id, name, character, profile_path }) => (
+      {cast?.slice(0, 10).map(({ id, name, character, profile_path }) => (
         <li key={id}>
           <img
             src={`https://image.tmdb.org/t/p/original/${profile_path}`}
