@@ -51,10 +51,10 @@ export const getMoviesCast = async id => {
   }
 };
 
-export const getMoviesRevieews = async movieId => {
+export const getMoviesRevieews = async id => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${MOVIES_API_KEY}&page=1&language='en-US'`
+      `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${MOVIES_API_KEY}&page=1&language='en-US'`
     );
     const responseData = response.data.results;
     return responseData;

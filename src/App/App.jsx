@@ -21,7 +21,8 @@ function App() {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
-            <Route path="*" element={<NoPageFound />} />    </Route>
+          <Route path="*" element={<NoPageFound />} />{' '}
+        </Route>
       </Routes>
       <ToastContainer />
     </div>
