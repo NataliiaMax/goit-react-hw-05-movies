@@ -7,18 +7,30 @@ const InfoMovy = ({ movie }) => {
 
   return (
     <div className={style.detailsWrapper}>
-      <h1>{title}</h1>
-      <p>Release date: {release_date}</p>
-      <img
-        src={`https://image.tmdb.org/t/p/w780${poster_path}`}
-        alt={title}
-        width="300"
-      />
-      <p>User score: {vote_average}%</p>
-      <h2>Overview</h2>
-      <p>{overview}</p>
-      <h3>Genres</h3>
-      <p>{genres?.map(genre => genre.name).join(', ')}</p>
+      <div className={style.detailsInnerWrapper}>
+        <div className={style.detailsWrapperImg}>
+          <img className={style.detailsImg}
+            src={`https://image.tmdb.org/t/p/w780${poster_path}`}
+            alt={title}
+            width="300"
+          />
+        </div>
+        <div className={style.detailsWrapperInfo}>
+          <h1 className={style.detailsTitle}>{title}</h1>
+          <p className={style.detailsText}>
+            <b>Release date:</b> {`${release_date?.split('-').reverse().join('-')}`}
+          </p>
+          <p className={style.detailsText}>
+            <b> User score:</b> {Math.round((vote_average / 10) * 100)}%
+          </p>
+          <p className={style.detailsText}>
+            <b>Overview:</b> {overview}
+          </p>
+          <p className={style.detailsText}>
+            <b>Genres:</b> {genres?.map(genre => genre.name).join('/')}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -23,7 +23,7 @@ export const searchMoviesByQuery = async query => {
     const responseData = response.data.results;
     return responseData;
   } catch (error) {
-     toast.error(error.message);
+    toast.error(error.message);
   }
 };
 
@@ -32,7 +32,7 @@ export const getMoviesDetails = async id => {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${MOVIES_API_KEY}&language=en-US`
     );
-    const responseData = response.data.results;
+    const responseData = response.data;
     return responseData;
   } catch (error) {
     console.log(error);
@@ -44,7 +44,7 @@ export const getMoviesCast = async id => {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${MOVIES_API_KEY}&language=en-US`
     );
-    const responseData = response.data.results;
+    const responseData = response.data.cast;
     return responseData;
   } catch (error) {
     console.log(error);

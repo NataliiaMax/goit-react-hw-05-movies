@@ -1,8 +1,5 @@
 .moviesSearchListCatalog {
-    /* display: grid;
-    grid-gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); */
-text-decoration: none;
+    text-decoration: none;
     list-style: none;
     margin: 0 auto;
     max-width: calc(100vw - 48px);
@@ -13,9 +10,7 @@ text-decoration: none;
     height: 100%;
     overflow: hidden;
     border-radius: 10px;
-    
 }
-
 
 .moviesSearchListTitle {
     display: flex;

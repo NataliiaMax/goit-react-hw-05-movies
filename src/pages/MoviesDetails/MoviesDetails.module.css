@@ -1,0 +1,41 @@
+.backText {
+    color: black;
+    margin-left: 30px;
+    font-size: 28px;
+}
+
+.addInfoWrapper {
+    padding: 20px;
+    background-color: cadetblue;
+    border-radius: 10px;
+}
+
+.addInfoTitle {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.addInfoList {
+    padding: 20px;
+    border-radius: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.addInfoItem {
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 500;
+    margin-left: 25px;
+}
+
+.active {
+    color: white;
+}
+
+.inActive {
+    color: black;
+}

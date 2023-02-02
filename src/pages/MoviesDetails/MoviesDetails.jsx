@@ -1,4 +1,4 @@
-// import style from './MoviesDetails.module.css';
+import style from './MoviesDetails.module.css';
 import { useEffect, useState, Suspense } from 'react';
 import {
   useParams,
@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import { getMoviesDetails } from '../../api/Movies-fetch';
 import InfoMovy from 'components/InfoMovy/InfoMovy';
+import PropTypes from 'prop-types';
 
 const MoviesDetails = () => {
   const [movie, setMovie] = useState([]);
@@ -26,17 +27,31 @@ const MoviesDetails = () => {
   return (
     <div>
       <Link to={location.state?.from ?? '/'} state={location}>
-        Go back
+        <p className={style.backText}>Go back</p>
       </Link>
       {movie && <InfoMovy movie={movie} />}
-      <div>
-        <h2>Additional information</h2>
-        <ul>
-          <li>
-            <NavLink to="cast">Cast</NavLink>
+      <div className={style.addInfoWrapper}>
+        <h2 className={style.addInfoTitle}>Additional information</h2>
+        <ul className={style.addInfoList}>
+          <li className={style.addInfoItem}>
+            <NavLink
+              to="cast"
+              className={({ isActive }) =>
+                isActive ? `${style.active}` : `${style.inActive}`
+              }
+            >
+              Cast
+            </NavLink>
           </li>
-          <li>
-            <NavLink to="reviews">Reviews</NavLink>
+          <li className={style.addInfoItem}>
+            <NavLink
+              to="reviews"
+              className={({ isActive }) =>
+                isActive ? `${style.active}` : `${style.inActive}`
+              }
+            >
+              Reviews
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -45,6 +60,10 @@ const MoviesDetails = () => {
       </Suspense>
     </div>
   );
+};
+
+MoviesDetails.propTypes = {
+  movie: PropTypes.array,
 };
 
 export default MoviesDetails;
