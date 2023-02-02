@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
-  const [noReviews, setNoReviews] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -15,21 +14,21 @@ const Reviews = () => {
     }
 
     getMoviesRevieews(id).then(setReviews);
-    if (setReviews === 0) {
-      setNoReviews("We don't have any reviews for this movie");
-    }
   }, [id]);
 
   return (
     <div className={style.reviewsWrapper}>
-      <div className={style.reviewsNotFound}>{noReviews}</div>
       <ul className={style.reviewsList}>
-        {reviews?.map(({ id, author, content }) => (
-          <li className={style.reviewsItem} key={id}>
-            <h3 className={style.reviewsTitle}>Author: {author}</h3>
-            <p className={style.reviewsContent}>{content}</p>
-          </li>
-        ))}
+        {reviews && reviews.length ? (
+          reviews?.map(({ id, author, content }) => (
+            <li className={style.reviewsItem} key={id}>
+              <h3 className={style.reviewsTitle}>Author: {author}</h3>
+              <p className={style.reviewsContent}>{content}</p>
+            </li>
+          ))
+        ) : (
+          <li>We don't have any reviews for this movie.</li>
+        )}
       </ul>
     </div>
   );

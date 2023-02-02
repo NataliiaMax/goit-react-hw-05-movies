@@ -18,11 +18,12 @@ const Cast = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className={style.castWrapper}>
       <ul className={style.castList}>
         {cast?.map(({ id, name, character, profile_path }) => (
-          <li key={id}>
+          <li key={id} className={style.castItem}>
             <img
+              className={style.castImg}
               src={
                 profile_path
                   ? `https://image.tmdb.org/t/p/w500/${profile_path}`

@@ -24,7 +24,6 @@ const Movies = () => {
     }
     setSearchParams({ query: searchQuery });
     setSearchQuery('');
-    e.target.reset();
   };
 
   useEffect(() => {
@@ -33,10 +32,10 @@ const Movies = () => {
     }
 
     searchMoviesByQuery(searchMovy).then(setMovies);
-    if (searchParams === '') {
+    if (setMovies.length === 0) {
       return toast.warning(`Movie with this name not found!`);
     }
-  }, [searchMovy, searchParams]);
+  }, [searchMovy, setMovies]);
 
   return (
     <div className={style.formContainer}>

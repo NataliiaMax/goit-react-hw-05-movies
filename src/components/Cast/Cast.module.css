@@ -1,12 +1,24 @@
 .castList {
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    height: 100%;
 }
 
-.castConteinerText{
+.castItem {
+    height: 100%;
+    overflow: hidden;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.castImg {
+    border-radius: 10px;
+}
+
+.castConteinerText {
     width: 100px;
+    text-align: center;
 }

@@ -21,14 +21,18 @@ const HomePage = () => {
         <ul className={style.homePageList}>
           {listMovies.map(({ id, title, poster_path }) => (
             <li key={id} className={style.homePageItem}>
-              <Link to={`/movies/${id}`} state={location}>
+              <Link
+                to={`/movies/${id}`}
+                state={location}
+                className={style.homePageLink}
+              >
                 <h4 className={style.homePageTitle}>{title}</h4>
                 <img
                   className={style.homePageImage}
                   src={`https://image.tmdb.org/t/p/w780${poster_path}`}
                   alt={title}
                   width="200"
-                ></img>
+                />
               </Link>
             </li>
           ))}

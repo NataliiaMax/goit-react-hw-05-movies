@@ -2,27 +2,26 @@
     display: flex;
     width: 100%;
     padding: 20px;
-    background-color: #172f78;
+    background-color: cadetblue;
     list-style: none;
-
-}
-
-.nav_active {
-    background-color: gray;
-}
-
-.navList {
-    background-color: aqua;
 }
 
 .navItem {
     display: inline-block;
     text-decoration: none;
-    color: #7bd4eb;
+    color: grey;
     font-size: 25px;
     font-weight: 500;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px 1px #7bd4eb;
+    box-shadow: 0 0 10px 1px black;
+}
+
+.active {
+    color: white;
+}
+
+.inaActive {
+    color: black
 }
