@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/951.3389b9d9.chunk.js","mappings":"mKAUA,UARoB,WAClB,OACE,0BACE,2CAGL,C","sources":["components/NoPageFound/NoPageFound.jsx"],"sourcesContent":["import React from 'react';\n\nconst NoPageFound = () => {\n  return (\n    <div>\n      <h1>No page found</h1>\n    </div>\n  );\n};\n\nexport default NoPageFound;\n"],"names":[],"sourceRoot":""}
