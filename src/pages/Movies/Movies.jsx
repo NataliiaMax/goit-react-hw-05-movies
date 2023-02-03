@@ -32,9 +32,6 @@ const Movies = () => {
     }
 
     searchMoviesByQuery(searchMovy).then(setMovies);
-    if (setMovies.length === 0) {
-      return toast.warning(`Movie with this name not found!`);
-    }
   }, [searchMovy, setMovies]);
 
   return (

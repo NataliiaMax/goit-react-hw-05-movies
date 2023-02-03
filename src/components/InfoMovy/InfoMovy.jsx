@@ -1,9 +1,16 @@
 import style from './InfoMovy.module.css';
 import PropTypes from 'prop-types';
+import notFoundImage from '../../images/notFoundImage.jpg';
 
-const InfoMovy = ({ movie }) => {
-  const { title, vote_average, overview, genres, poster_path, release_date } =
-    movie;
+const InfoMovy = ({
+  movie: { title, poster_path, vote_average, overview, genres, release_date },
+}) => {
+  function placeholder(poster_path) {
+    if (poster_path == null) {
+      return notFoundImage;
+    }
+    return `https://image.tmdb.org/t/p/w300${poster_path}`;
+  }
 
   return (
     <div className={style.detailsWrapper}>
@@ -11,17 +18,18 @@ const InfoMovy = ({ movie }) => {
         <div className={style.detailsWrapperImg}>
           <img
             className={style.detailsImg}
-            src={`https://image.tmdb.org/t/p/w780${poster_path}`}
+            src={placeholder(poster_path)}
             alt={title}
             width="300"
           />
         </div>
         <div className={style.detailsWrapperInfo}>
-          <h1 className={style.detailsTitle}>{title}</h1>
-          <p className={style.detailsText}>
-            <b>Release date:</b>{' '}
-            {`${release_date?.split('-').reverse().join('-')}`}
-          </p>
+          <h1 className={style.detailsTitle}>
+            {title}{' '}
+            <span className={style.detailsSpan}>
+              ({`${release_date?.slice(0, 4)}`})
+            </span>
+          </h1>
           <p className={style.detailsText}>
             <b> User score:</b> {Math.round((vote_average / 10) * 100)}%
           </p>
@@ -38,16 +46,7 @@ const InfoMovy = ({ movie }) => {
 };
 
 InfoMovy.propTypes = {
-  movie: PropTypes.arrayOf(
-    PropTypes.shape({
-      vote_average: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      poster_path: PropTypes.string.isRequired,
-      overview: PropTypes.string.isRequired,
-      genres: PropTypes.string.isRequired,
-      release_date: PropTypes.number.isRequired,
-    })
-  ),
+  movie: PropTypes.array,
 };
 
 export default InfoMovy;

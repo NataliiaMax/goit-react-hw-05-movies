@@ -29,6 +29,11 @@ border-radius: 10px;
     text-transform: uppercase;
 }
 
+.detailsSpan{
+    text-transform: none;
+    font-weight: 600;
+}
+
 .detailsText {
     font-weight: 400;
 }

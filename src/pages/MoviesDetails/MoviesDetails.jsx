@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import { getMoviesDetails } from '../../api/Movies-fetch';
 import InfoMovy from 'components/InfoMovy/InfoMovy';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const MoviesDetails = () => {
   const [movie, setMovie] = useState([]);
@@ -62,8 +62,8 @@ const MoviesDetails = () => {
   );
 };
 
-MoviesDetails.propTypes = {
-  movie: PropTypes.array,
-};
+// MoviesDetails.propTypes = {
+//   movie: PropTypes.array,
+// };
 
 export default MoviesDetails;

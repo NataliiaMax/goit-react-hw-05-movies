@@ -18,28 +18,28 @@ const Cast = () => {
   }, [id]);
 
   return (
-    <div className={style.castWrapper}>
-      <ul className={style.castList}>
-        {cast?.map(({ id, name, character, profile_path }) => (
-          <li key={id} className={style.castItem}>
+    <ul className={style.castList}>
+      {cast?.map(({ id, name, character, profile_path }) => (
+        <li key={id} className={style.castItem}>
+          <div className={style.castWrapImg}>
             <img
               className={style.castImg}
               src={
                 profile_path
-                  ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                  ? 'https://image.tmdb.org/t/p/w185' + profile_path
                   : notFoundImage
               }
               alt={name}
               width="100"
             />
-            <div className={style.castConteinerText}>
-              <p>{name}</p>
-              <p>Character: {character}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+          </div>
+          <div className={style.castConteinerText}>
+            <p>{name}</p>
+            <p>Character: {character}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 };
 
