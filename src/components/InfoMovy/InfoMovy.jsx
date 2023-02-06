@@ -46,7 +46,7 @@ const InfoMovy = ({
 };
 
 InfoMovy.propTypes = {
-  movie: PropTypes.array,
+  movie: PropTypes.object,
 };
 
 export default InfoMovy;
