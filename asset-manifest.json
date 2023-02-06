@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.c9969133.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.79d48c99.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.c195fe1f.js",
     "static/css/877.5d38427b.chunk.css": "/goit-react-hw-05-movies/static/css/877.5d38427b.chunk.css",
-    "static/js/877.b4c1e288.chunk.js": "/goit-react-hw-05-movies/static/js/877.b4c1e288.chunk.js",
+    "static/js/877.8bdacbd2.chunk.js": "/goit-react-hw-05-movies/static/js/877.8bdacbd2.chunk.js",
     "static/css/936.07e25ca1.chunk.css": "/goit-react-hw-05-movies/static/css/936.07e25ca1.chunk.css",
     "static/js/936.528ebe7f.chunk.js": "/goit-react-hw-05-movies/static/js/936.528ebe7f.chunk.js",
     "static/css/558.195d6997.chunk.css": "/goit-react-hw-05-movies/static/css/558.195d6997.chunk.css",
@@ -22,9 +22,9 @@
     "static/media/notFoundImage.jpg": "/goit-react-hw-05-movies/static/media/notFoundImage.ee75b81b64ce001f06a2.jpg",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.c9969133.css.map": "/goit-react-hw-05-movies/static/css/main.c9969133.css.map",
-    "main.79d48c99.js.map": "/goit-react-hw-05-movies/static/js/main.79d48c99.js.map",
+    "main.c195fe1f.js.map": "/goit-react-hw-05-movies/static/js/main.c195fe1f.js.map",
     "877.5d38427b.chunk.css.map": "/goit-react-hw-05-movies/static/css/877.5d38427b.chunk.css.map",
-    "877.b4c1e288.chunk.js.map": "/goit-react-hw-05-movies/static/js/877.b4c1e288.chunk.js.map",
+    "877.8bdacbd2.chunk.js.map": "/goit-react-hw-05-movies/static/js/877.8bdacbd2.chunk.js.map",
     "936.07e25ca1.chunk.css.map": "/goit-react-hw-05-movies/static/css/936.07e25ca1.chunk.css.map",
     "936.528ebe7f.chunk.js.map": "/goit-react-hw-05-movies/static/js/936.528ebe7f.chunk.js.map",
     "558.195d6997.chunk.css.map": "/goit-react-hw-05-movies/static/css/558.195d6997.chunk.css.map",
@@ -42,6 +42,6 @@
   },
   "entrypoints": [
     "static/css/main.c9969133.css",
-    "static/js/main.79d48c99.js"
+    "static/js/main.c195fe1f.js"
   ]
 }
