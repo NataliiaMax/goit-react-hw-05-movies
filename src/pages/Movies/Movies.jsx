@@ -23,7 +23,6 @@ const Movies = () => {
       });
     }
     setSearchParams({ query: searchQuery });
-    setSearchQuery('');
   };
 
   useEffect(() => {

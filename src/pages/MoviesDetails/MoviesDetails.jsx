@@ -15,7 +15,7 @@ const MoviesDetails = () => {
   const [movie, setMovie] = useState({});
   const { id } = useParams();
   const location = useLocation();
-
+  const cameBack = location.state?.from ?? '/';
   useEffect(() => {
     getMoviesDetails(id).then(setMovie);
   }, [id]);
@@ -26,7 +26,7 @@ const MoviesDetails = () => {
 
   return (
     <div>
-      <Link to={location.state?.from ?? '/'} state={location}>
+      <Link to={cameBack} state={{ from: location }}>
         <p className={style.backText}>Go back</p>
       </Link>
       {movie && <InfoMovy movie={movie} />}
@@ -36,6 +36,7 @@ const MoviesDetails = () => {
           <li className={style.addInfoItem}>
             <NavLink
               to="cast"
+              state={{ from: cameBack }}
               className={({ isActive }) =>
                 isActive ? `${style.active}` : `${style.inActive}`
               }
@@ -46,6 +47,7 @@ const MoviesDetails = () => {
           <li className={style.addInfoItem}>
             <NavLink
               to="reviews"
+              state={{ from: cameBack }}
               className={({ isActive }) =>
                 isActive ? `${style.active}` : `${style.inActive}`
               }

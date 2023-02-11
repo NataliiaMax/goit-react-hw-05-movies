@@ -10,7 +10,7 @@ const SearchMoviesPage = ({ movies }) => {
       <ul className={style.moviesSearchListCatalog}>
         {movies?.map(({ id, title }) => (
           <li key={id} className={style.moviesSearchListItem}>
-            <Link to={`/movies/${id}`} state={location}>
+            <Link to={`/movies/${id}`} state={{from: location }}>
               <h4 className={style.moviesSearchListTitle}>{title}</h4>
             </Link>
           </li>

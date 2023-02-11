@@ -23,7 +23,7 @@ const HomePage = () => {
             <li key={id} className={style.homePageItem}>
               <Link
                 to={`/movies/${id}`}
-                state={location}
+                state={{ from: location }}
                 className={style.homePageLink}
               >
                 <h4 className={style.homePageTitle}>{title}</h4>
